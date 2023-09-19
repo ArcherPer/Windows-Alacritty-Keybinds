@@ -1,0 +1,70 @@
+# Based on Windows Terminal key-binds
+key_bindings:
+
+  # Navigation
+  - { key: Up,                         mode: Vi|~Search,          action: Up            } # Move cursor up
+  - { key: Down,                       mode: Vi|~Search,          action: Down          } # Move cursor down
+  - { key: Left,                       mode: Vi|~Search,          action: Left          } # Move cursor left
+  - { key: Right,                      mode: Vi|~Search,          action: Right         } # Move cursor right
+  - { key: Left,  mods: Control,       mode: Vi|~Search,          action: WordLeft      } # Move cursor left 1 word
+  - { key: Right, mods: Control,       mode: Vi|~Search,          action: WordRight     } # Move cursor right 1 word
+  - { key: Left,  mods: Control|Shift, mode: Vi|~Search,          action: SemanticLeft  } # Move cursor left 1 semantic
+  - { key: Right, mods: Control|Shift, mode: Vi|~Search,          action: SemanticRight } # Move cursor right 1 semantic
+
+  # Utility
+  - { key: Insert, mods: Control,       action: Copy              } # Copy (Toggle Vi mode for Ctr + C)
+  - { key: C,      mods: Control|Shift, action: Copy              }
+  - { key: Insert, mods: Shift,         action: Paste             } # Paste (Toggle Vi mode for Ctr + V)
+  - { key: V,      mods: Control|Shift, action: Paste             }
+  - { key: Tab,    mods: Control,       action: ClearSelection    } # Unselect text
+  - { key: Slash,  mods: Control,       action: Minimize          } # Minimize Alacritty window
+  - { key: Slash,  mods: Control|Shift, action: Hide              } # Hide Alacritty window
+  - { key: F1,     mods: Alt,           action: ClearLogNotice    } # Close Error Notification
+  - { key: F4,     mods: Alt,           action: Quit              } # Exit Alacritty
+  - { key: F5,     mods: Alt,           action: Quit              } # Refresh Alacritty
+  - { key: F5,     mods: Alt,           action: SpawnNewInstance  }
+  - { key: F11,    mods: Alt,           action: ToggleFullscreen  } # Full-screen
+  - { key: Return, mods: Alt,           action: ToggleFullscreen  }
+
+  # Scroll-back
+  - { key: PageUp,   mods: Control,       action: ScrollHalfPageUp   } # Scroll up half page
+  - { key: PageUp,   mods: Control|Shift, action: ScrollPageUp       } # Scroll up full page
+  - { key: Up,       mods: Control|Shift, action: ScrollPageUp       }
+  - { key: PageUp,   mods: Alt,           action: ScrollToTop        } # Scroll to top
+  - { key: PageDown, mods: Control,       action: ScrollHalfPageDown } # Scroll down half page
+  - { key: PageDown, mods: Control|Shift, action: ScrollPageDown     } # Scroll down full page
+  - { key: Down,     mods: Control|Shift, action: ScrollPageDown     }
+  - { key: PageDown, mods: Alt,           action: ScrollToBottom     } # Scroll to bottom
+  - { key: F7,       mods: Alt,           action: ClearHistory       } # Clear Scroll-back buffer
+
+  # Vi Mode
+  - { key: Space,  mods: Control,                 action: ToggleViMode            } # Toggle Vi mode
+  - { key: M,      mods: Control,                 action: ToggleViMode            }
+  - { key: Escape,                      mode: Vi, action: ToggleViMode            } # Close Vi mode
+  - { key: Home,                        mode: Vi, action: FirstOccupied           } # Move cursor to front of line
+  - { key: End,                         mode: Vi, action: Last                    } # Move cursor to end of line
+  - { key: C,      mods: Control,       mode: Vi, action: Copy                    } # Copy  (Vi exclusive version)
+  - { key: V,      mods: Control,       mode: Vi, action: Paste                   } # Paste (Vi exclusive version)
+  - { key: A,      mods: Control,       mode: Vi, action: ToggleLineSelection     } # Select line
+  - { key: A,      mods: Control|Shift, mode: Vi, action: ToggleSemanticSelection } # Select word
+  - { key: F,      mods: Control|Shift, mode: Vi, action: CenterAroundViCursor    } # Center cursor
+  - { key: Insert,                      mode: Vi, action: ToggleNormalSelection   } # Toggle selection
+  - { key: Insert, mods: Control|Shift, mode: Vi, action: ToggleBlockSelection    } # Toggle block selection
+  - { key: Up,     mods: Control,       mode: Vi, action: High                    } # Jump cursor to top of screen
+  - { key: Down,   mods: Control,       mode: Vi, action: Low                     } # Jump cursor to bottom of screen
+
+  # Search Mode
+  - { key: F,      mods: Control, mode: Alt,     action: ToggleViMode          } # Start search
+  - { key: F,      mods: Control, mode: ~Search, action: SearchForward         } 
+  - { key: Escape,                mode: Search,  action: SearchCancel          } # Close search
+  - { key: Return,                mode: Search,  action: SearchConfirm         }
+  - { key: Right,                 mode: Search,  action: SearchFocusNext       } # Focus next
+  - { key: Left,                  mode: Search,  action: SearchFocusPrevious   } # Focus previous
+  - { key: Up,                    mode: Search,  action: SearchHistoryPrevious } # Load last search
+  - { key: Down,                  mode: Search,  action: SearchHistoryNext     } # Load next search
+  - { key: Back,   mods: Control, mode: Search,  action: SearchDeleteWord      } # Delete word from search
+
+  # Visuals
+  - { key: Equals, mods: Control, action: IncreaseFontSize } # Increase font size
+  - { key: Minus,  mods: Control, action: DecreaseFontSize } # Decrease font size
+  - { key: Key0,   mods: Control, action: ResetFontSize    } # Reset font size
