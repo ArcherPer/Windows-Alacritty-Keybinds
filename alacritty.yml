@@ -54,8 +54,7 @@ key_bindings:
   - { key: Down,   mods: Control,       mode: Vi, action: Low                     } # Jump cursor to bottom of screen
 
   # Search Mode
-  - { key: F,      mods: Control, mode: Alt,     action: ToggleViMode          } # Start search
-  - { key: F,      mods: Control, mode: ~Search, action: SearchForward         } 
+  - { key: F,      mods: Control, mode: Vi,      action: SearchForward         } # Start search
   - { key: Escape,                mode: Search,  action: SearchCancel          } # Close search
   - { key: Return,                mode: Search,  action: SearchConfirm         }
   - { key: Right,                 mode: Search,  action: SearchFocusNext       } # Focus next
