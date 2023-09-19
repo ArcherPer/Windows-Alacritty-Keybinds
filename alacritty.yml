@@ -17,8 +17,7 @@ key_bindings:
   - { key: Insert, mods: Shift,         action: Paste             } # Paste (Toggle Vi mode for Ctr + V)
   - { key: V,      mods: Control|Shift, action: Paste             }
   - { key: Tab,    mods: Control,       action: ClearSelection    } # Unselect text
-  - { key: Slash,  mods: Control,       action: Minimize          } # Minimize Alacritty window
-  - { key: Slash,  mods: Control|Shift, action: Hide              } # Hide Alacritty window
+  - { key: Slash,  mods: Control,       action: Hide              } # Hide Alacritty window
   - { key: F1,     mods: Alt,           action: ClearLogNotice    } # Close Error Notification
   - { key: F4,     mods: Alt,           action: Quit              } # Exit Alacritty
   - { key: F5,     mods: Alt,           action: Quit              } # Refresh Alacritty
